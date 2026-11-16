@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import SimpleCarousel from "../pages/SimpleCarousel";
+
 // import "./Home.css";
 
 export default function Home({ navigateTo }) {
@@ -80,6 +82,10 @@ export default function Home({ navigateTo }) {
         </div> */}
       </section>
 
+      <section className="hero animate-fade-in">
+        <SimpleCarousel />
+      </section>
+
       <section className="grid-section">
         <div className="card">
           <i className="fa-solid fa-bolt card-icon"></i>
@@ -87,7 +93,9 @@ export default function Home({ navigateTo }) {
           <p>
             Seamless tab navigation without page reloads for instant responses.
           </p>
+          <img src="" alt="" />
         </div>
+
         <div className="card">
           <i className="fa-solid fa-cubes card-icon"></i>
           <h3>Modular Structure</h3>
