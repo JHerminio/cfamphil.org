@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import cfamlogo from "../images/webp/cfamlogo.webp";
 import "./Navbar.css";
 
 const navItems = [
@@ -69,7 +70,15 @@ export default function Navbar({ activeTab, navigateTo }) {
             handleNavClick("home");
           }}
         >
-          <i className="fa-solid fa-bars"></i> ModuApp
+          {/* <i className="fa-solid fa-bars"></i> ModuApp */}
+          <img
+            src={cfamlogo}
+            alt="CFAMPHIL.ORG"
+            className="logoimage"
+            style={{ height: "auto", width: "80px", objectFit: "contain" }}
+          />
+          CFAM
+          {/* <p>Catechetical Foundation of the Archdiocese of Manila</p> */}
         </a>
 
         {/* Desktop Navigation */}

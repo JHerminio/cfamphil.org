@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import "./Home.css";
 
 export default function Home({ navigateTo }) {
   const [activeHeroTab, setActiveHeroTab] = useState("programs");
@@ -6,18 +7,15 @@ export default function Home({ navigateTo }) {
   return (
     <>
       <section className="hero animate-fade-in">
-        <h1>Welcome to Our Platform</h1>
-        <p>
-          Building impactful initiatives through collaborative community work
-          and accessible education.
-        </p>
+        <h1>Welcome to CFAM</h1>
+        <h2>Catechetical Foundation of the Archdiocese of Manila</h2>
 
         <div
           className="hero-tabs"
           role="tablist"
           aria-label="Hero Section Options"
         >
-          <button
+          {/* <button
             className={`tab-btn ${activeHeroTab === "programs" ? "active" : ""}`}
             id="tab-programs"
             role="tab"
@@ -36,10 +34,10 @@ export default function Home({ navigateTo }) {
             onClick={() => setActiveHeroTab("join")}
           >
             Get Involved
-          </button>
+          </button> */}
         </div>
 
-        <div className="hero-tab-panels">
+        {/* <div className="hero-tab-panels">
           {activeHeroTab === "programs" && (
             <div
               id="panel-programs"
@@ -79,7 +77,7 @@ export default function Home({ navigateTo }) {
               </button>
             </div>
           )}
-        </div>
+        </div> */}
       </section>
 
       <section className="grid-section">
