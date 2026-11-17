@@ -86,7 +86,7 @@ export default function Home({ navigateTo }) {
         <SimpleCarousel />
       </section>
 
-      <section className="grid-section">
+      {/* <section className="grid-section">
         <div className="card">
           <i className="fa-solid fa-bolt card-icon"></i>
           <h3>Fast Performance</h3>
@@ -107,6 +107,44 @@ export default function Home({ navigateTo }) {
           <i className="fa-solid fa-mobile-screen card-icon"></i>
           <h3>Fully Responsive</h3>
           <p>Optimized layouts for desktop, tablet, and mobile browsers.</p>
+        </div>
+      </section> */}
+
+      <section className="grid-section">
+        <div className="card">
+          <i className="fa-solid fa-bolt card-icon"></i>
+          <h3>Fast Performance</h3>
+          <p>
+            Seamless tab navigation without page reloads for instant responses.
+          </p>
+          <img src="" alt="" />
+        </div>
+
+        <div className="card">
+          <div
+            style={{
+              position: "relative",
+              paddingBottom: "56.25%",
+              height: 0,
+              overflow: "hidden",
+              borderRadius: "8px",
+            }}
+          >
+            <iframe
+              src="https://www.youtube.com/embed/ADyonv2bjcY?start=2"
+              title="Watch Our Video"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                border: 0,
+              }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </div>
       </section>
     </>
