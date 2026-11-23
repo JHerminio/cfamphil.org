@@ -14,12 +14,27 @@ const navItems = [
 
 export default function Navbar({ activeTab, navigateTo }) {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const popupRef = useRef(null);
 
   const handleNavClick = (id) => {
     navigateTo(id);
     setIsMobileOpen(false); // Close popup when a link is clicked
   };
+
+  // Track window scroll for the navbar blur effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Lock body scrolling when popup is open
   useEffect(() => {
@@ -59,26 +74,23 @@ export default function Navbar({ activeTab, navigateTo }) {
   }, [isMobileOpen]);
 
   return (
-    <header className="navbar">
+    <header className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="nav-container">
         {/* Brand Logo */}
         <a
           href="#home"
-          className="brand"
+          className={`brand ${isScrolled ? "scrolled" : ""}`}
           onClick={(e) => {
             e.preventDefault();
             handleNavClick("home");
           }}
         >
-          {/* <i className="fa-solid fa-bars"></i> ModuApp */}
           <img
             src={cfamlogo}
             alt="CFAMPHIL.ORG"
-            className="logoimage"
-            style={{ height: "auto", width: "80px", objectFit: "contain" }}
+            className={`logoimage ${isScrolled ? "scrolled" : ""}`}
           />
           CFAM
-          {/* <p>Catechetical Foundation of the Archdiocese of Manila</p> */}
         </a>
 
         {/* Desktop Navigation */}
@@ -101,7 +113,7 @@ export default function Navbar({ activeTab, navigateTo }) {
         {/* Mobile Toggle Button */}
         <button
           type="button"
-          className="mobile-toggle"
+          className={`mobile-toggle ${isScrolled ? "scrolled" : ""}`}
           aria-label="Toggle Menu"
           aria-expanded={isMobileOpen}
           aria-controls="mobile-popup-menu"

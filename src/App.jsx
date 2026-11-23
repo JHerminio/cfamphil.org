@@ -57,7 +57,7 @@ export default function App() {
   return (
     <div className="app-container">
       <Navbar activeTab={activeTab} navigateTo={navigateTo} />
-      <main id="content-container" className="main-content">
+      <main id="content-container" className="">
         {renderPage()}
       </main>
       <Footer />

@@ -5,8 +5,9 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <p>
-          &copy; {new Date().getFullYear()} ModuApp Organization. All rights
-          reserved.
+          {/* {new Date().getFullYear()} */}
+          &copy; 2022 Catechetical Foundation of the Archdiocese of Manila. All
+          Rights Reserved.
         </p>
         <div className="social-links">
           <a href="https://urlvanish.com/CFAM_Facebook">

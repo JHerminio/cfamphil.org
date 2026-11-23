@@ -30,7 +30,7 @@ export default function AboutTabs() {
 
   return (
     <section className="about-section">
-      <h2>About Our Organization</h2>
+      <h2>About our Organization</h2>
       <p className="about-subtitle">
         Learn more about our mission, leadership, and impact.
       </p>

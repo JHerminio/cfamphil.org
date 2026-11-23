@@ -1,10 +1,22 @@
 /* Navbar Base Container */
 .navbar {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-bottom: 1px solid transparent;
   position: sticky;
   top: 0;
   z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: #0e3350;
+  /* opacity: 0.65; */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -20,11 +32,26 @@
   font-size: 31px;
   font-weight: bold;
   font-family: "open sans", sans-serif;
-  color: #2563eb;
+  color: #000;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
+}
+
+.brand.scrolled {
+  color: #fff;
+}
+
+.logoimage {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+  transition: width 0.3s ease;
+}
+
+.logoimage.scrolled {
+  width: 50px;
 }
 
 .desktop-nav {
@@ -34,15 +61,18 @@
 
 .nav-link {
   font-size: 0.95rem;
-  font-weight: 500;
-  color: #4b5563;
+  font-weight: 800;
+  color: #fff;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: #2563eb;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 1000;
+  transition: all 0.3s ease;
 }
 
 /* Mobile Toggle Button (hidden on desktop) */
@@ -51,7 +81,7 @@
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: black;
+  color: #fff;
   cursor: pointer;
   padding: 0.5rem;
   line-height: 1;
@@ -59,8 +89,9 @@
   transition: background-color 0.2s ease;
 }
 
-.mobile-toggle:hover {
-  background-color: #f3f4f6;
+.mobile-toggle.scrolled {
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
 /* Mobile Popup Overlay (Full Screen Backdrop) */
@@ -76,6 +107,7 @@
   padding: 1.25rem;
   padding-top: 4.5rem;
   animation: fadeInBackdrop 0.25s ease-out forwards;
+  height: 100vh;
 }
 
 /* Mobile Popup Card */
@@ -207,5 +239,6 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    color: #000;
   }
 }

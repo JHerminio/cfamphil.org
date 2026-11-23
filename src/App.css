@@ -18,6 +18,12 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  /* Add your background image here */
+  background-image: url("./images/webp/bg-cfam.webp"); /* Or use a URL */
+  background-size: cover; /* Scales the image to cover the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from tiling/repeating */
+  background-attachment: fixed;
 }
 
 .main-content {
@@ -307,7 +313,7 @@ a {
 
 /* Footer Component */
 .footer {
-  background-color: #ffffff;
+  background-color: #161616;
   border-top: 1px solid #e5e7eb;
   margin-top: auto;
 }
@@ -320,7 +326,7 @@ a {
   justify-content: space-between;
   align-items: center;
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #fff;
 }
 
 .social-links {
@@ -330,12 +336,12 @@ a {
 }
 
 .social-links a {
-  color: #6b7280;
+  color: #fff;
   transition: color 0.2s ease;
 }
 
 .social-links a:hover {
-  color: #2563eb;
+  color: #6b7280;
 }
 
 /* Responsive Media Queries */
